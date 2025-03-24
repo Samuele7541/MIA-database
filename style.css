@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    /*width: 100%;
+    min-height: 100vh;
+    padding: 5%;*/
+    /*background-image: linear-gradient(rgba(88, 185, 101, 0.6), rgba(88, 185, 101, 0.6)), url(images/background.jpg);*/
+    background-image: linear-gradient(rgba(94, 139, 100, 0.55), rgba(94, 139, 100, 0.55)), url(images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    /*display: flex;
+    align-items: center;
+    justify-content: center;*/
+    min-height:100vh;
+    margin: 0;
+    padding: 5%;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: -95px auto; 
+    width: 200px; 
+    height: 200px;
+    object-fit: contain; 
+}
+
+nav {
+    position: relative;
+    width: 500px;
+    height: 50px;
+    background: #5f8661a0;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+nav a {
+    position: relative;
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+nav span {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #267D39, #1B5E20);
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    width: calc(100% / 4);
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+
+nav a:nth-child(1):hover~span
+{
+	left: 0px;
+}
+nav a:nth-child(2):hover~span
+{
+	left: 90px;
+	width:152px;
+}
+nav a:nth-child(3):hover~span
+{
+	left: 242px;
+	width: 116px;
+}
+nav a:nth-child(4):hover~span
+{
+	left: 350px;
+	width: 132px;
+}
+
+.searchBar{
+    display: flex;
+    margin: -40px -30px;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    background-color: #8ea890b2;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.4);
+    transition: width 0.3s ease;
+}
+
+.searchBar input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: #ddd;
+    font-size: 16px;
+    font-weight: 400px;
+    background-color: transparent;
+    color: #ddd;
+    transition: width 0.3s ease;
+}
+
+.searchBar i{
+    cursor: pointer;
+    font-size: 23px;
+    color:#1B5E20;
+}
+
+.searchBar:hover{
+    width: 400px;
+}
+
+.searchBar:hover input {
+    width: 100%;
+}
+
+.searchBar input::placeholder {
+    color: #ddd; /* Scegli il colore desiderato */
+    opacity: 1; /* Assicurati che l'opacità sia impostata a 1 per una visibilità completa */
+}
+
+
+
+/*SCHEDE FUNGHI*/
+
+.fungi-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.fungi-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    gap: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 300px; /* Aumenta l'altezza del container */
+}
+
+.fungi-card {
+    width: 200px;
+    height: 258px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #789b7ab6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    color: #fff;
+
+    /* Aggiungiamo la transizione per uno scorrimento più fluido */
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fungi-card.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fungi-card h3 {
+    margin-bottom: 10px; /* Aggiungi margine inferiore per creare spazio */
+    margin-top: 5px;
+}
+
+.fungi-card img {
+    max-width: 80%; /* Limita la larghezza massima dell'immagine */
+    height: auto; /* Mantieni l'altezza automatica per preservare le proporzioni */
+    display: block; /* Assicurati che l'immagine sia un blocco per evitare spazi indesiderati */
+    margin: 0 auto; /* Centra l'immagine all'interno della scheda */
+}
+
+/*PULSANTE*/
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #709e72be;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    z-index: 10;
+}
+
+#prev-button {
+    left: 10px;
+}
+
+#next-button {
+    right: 10px;
+}
+
+.scroll-button:hover {
+    background-color: #4a6e52;
+}
+
+.info-button {
+    background: linear-gradient(45deg, #267D39, #1B5E20); /* Stile simile al selettore del menù */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 15px; /* Spazio sopra il pulsante */
+}
+
+.info-button:hover {
+    background: linear-gradient(45deg, #1B5E20, #267D39); /* Effetto hover */
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #789b7ade;
+    padding: 20px;
+    border-radius: 25px; /* Aumenta il valore per angoli più arrotondati */
+    width: 80%;
+    color: #fff;
+    max-width: 600px;
+    position: relative;
+}
+
+#modal-title {
+    margin: 10px 0; /* Imposta un margine sopra e sotto l'identificativo */
+    color: #fff;
+    font-size: 3.5ch;
+
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.modal-content p {
+    text-align: left; /* Allinea il testo a sinistra */
+    margin: 5px 0; /* Aggiungi margine per separare i paragrafi */
+    color: #fff;
+}
+
+.footer {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px; /* Dimensione del testo */
+    color: #fff; /* Colore del testo */
+    z-index: 100; /* Assicurati che sia sopra altri elementi */
+}
+
+/*.searchBar{
+    width: 100%;
+    margin: 40px;
+    max-width: 700px;
+    background: rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 60px;
+    padding: 10px 20px;
+}*/

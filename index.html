@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mia</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="fungo.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/a2a1ec32e2.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+    
+    <div class="container">
+        <section>
+            <div class="searchBar">
+                <input type="text" placeholder="Cerca...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                
+            </div>
+            <img src="images/logo3.png" alt="Logo" class="logo">  
+        </section>
+        <section><br><br><br><br>
+            <center><nav>
+                <a href="#">Home</a>
+                <a href="#">Collection</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+                <span></span>
+            </nav>  
+        </section>
+        <br><br><br>
+
+        <section id="fungi-collection" style="display: none;">
+            <div class="fungi-container">
+                <button id="prev-button" class="scroll-button">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                </button>
+                <div id="fungi-cards-container" class="fungi-cards-container"></div>
+                <button id="next-button" class="scroll-button">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <div id="modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-scientific-name"></p>
+                <p id="modal-geographic-distribution"></p>
+                <p id="modal-habitat"></p>
+                <p id="modal-morphology"></p>
+                <p id="modal-genetic-sequence"></p>
+                <p id="modal-references"></p>
+                <p id="modal-biotech-applications"></p>
+            </div>
+        </div>
+        <div class="footer">
+            <i class="fa-solid fa-circle-user"></i> Created By: Samuele Pricci | Class: 4Di
+        </div>
+    </div>
+    
+    <script src="js/catalogo.js"></script>
+    </body>
+</html>
