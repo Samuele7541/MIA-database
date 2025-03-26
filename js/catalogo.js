@@ -192,11 +192,20 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll("nav a").forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
-            if (this.textContent === "Collection") {
-                fungiCollectionSection.style.display = "block";
-                loadFungi();
+            if (this.textContent === "Home") {
+                attivo = null; //RESET POSIZIONE
+                document.getElementById("home-title").style.display = "block"; // Mostra il titolo della Home
+                document.getElementById("home-text").style.display = "block"; // Mostra il testo della Home
+                fungiCollectionSection.style.display = "none"; // Nascondi la sezione dei funghi
             } else {
-                fungiCollectionSection.style.display = "none";
+                document.getElementById("home-title").style.display = "none"; // Nascondi il titolo della Home
+                document.getElementById("home-text").style.display = "none"; // Nascondi il testo della Home
+                if (this.textContent === "Collection") {
+                    fungiCollectionSection.style.display = "block";
+                    loadFungi();
+                } else {
+                    fungiCollectionSection.style.display = "none";
+                }
             }
         });
     });
